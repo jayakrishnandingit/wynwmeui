@@ -1,0 +1,27 @@
+{% extends "wynwmeui/layout.html" %}
+
+{% block content %}
+    <div class="col-md-12" ng-controller="ArtistListController">
+        <h3>Artists</h3>
+        <div class="col-md-6">
+            <div class="col-md-8 search pull-left input-group">
+                <input tabindex="1" class="form-control" ng-model="search_text" placeholder="Search" type="search" ng-change="search()" /> 
+                <span class="input-group-addon">
+                    <i class="fa fa-search"></i>
+                </span>
+            </div>
+        </div>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="artist in artists">
+                    <td>{[{artist.fields.name}]}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
